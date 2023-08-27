@@ -148,6 +148,8 @@ namespace Database
 
                 foreach (Load l in loads)
                 {
+                    l.Id = ++maxID;
+
                     XmlNode element = null;
 
                     try
