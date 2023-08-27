@@ -14,36 +14,39 @@ namespace Client
         static void Main(string[] args)
         {
             Console.WriteLine("Client started....\n\n");
-            Console.WriteLine("===================================================");
-            Console.WriteLine("Enter the path of the folder from which you want to read the data: ");
-            string path = Console.ReadLine();
-
-            //provera foldera
-            if (Directory.Exists(path))
+            while (true)
             {
-                int temp = 0;
+                Console.WriteLine("===================================================");
+                Console.WriteLine("Enter the path of the folder from which you want to read the data: ");
+                string path = Console.ReadLine();
 
-                foreach (string filePath in Directory.GetFiles(path, "*.csv"))
+                //provera foldera
+                if (Directory.Exists(path))
                 {
-                    if (path.Contains("forecast")) //provera da li se salje forecast ili measured
-                    {
-                        SendFile(filePath, true);
-                        Console.WriteLine(temp + ". - Successfully!");
-                    }
-                    else if (path.Contains("measured"))
-                    {
-                        SendFile(filePath, false);
-                        Console.WriteLine(temp + ". - Successfully!");
-                    }
-                    temp++;
+                    int temp = 0;
 
+                    foreach (string filePath in Directory.GetFiles(path, "*.csv"))
+                    {
+                        if (path.Contains("forecast")) //provera da li se salje forecast ili measured
+                        {
+                            SendFile(filePath, true);
+                            Console.WriteLine(temp + ". - Successfully!");
+                        }
+                        else if (path.Contains("measured"))
+                        {
+                            SendFile(filePath, false);
+                            Console.WriteLine(temp + ". - Successfully!");
+                        }
+                        temp++;
+
+                    }
+                    temp = 0;
+                    Console.WriteLine("Import completed");
                 }
-                temp = 0;
-                Console.WriteLine("Import completed");
-            }
-            else
-            {
-                Console.WriteLine("Folder does not exist.");
+                else
+                {
+                    Console.WriteLine("Folder does not exist.");
+                }
             }
         }
 
