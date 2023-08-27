@@ -11,6 +11,8 @@ namespace Client
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Client started....");
+            Console.ReadLine();
         }
     }
 }
