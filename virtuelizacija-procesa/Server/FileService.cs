@@ -34,35 +34,35 @@ namespace Server
                     char[] parts = { ',' };
                     string[] rowSplit = row.Split(parts, StringSplitOptions.RemoveEmptyEntries);
 
-                    if (csv_rows.Length <= 23 || csv_rows.Length >= 25) //provera broja redova u datoteci (broj sati u danu)
+                    if (csv_rows.Length > 26 || csv_rows.Length < 23) //provera broja redova u datoteci (broj sati u danu)
                     {
-                        Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, "Invalid number of rows" + DateTime.Now.ToString("yyyy-MM-dd HH-mm"));
+                        Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, "Invalid number of rows");
                         errors.Add(a);
                     }
                     else if (rowSplit.Length != 2) //provera formata (da li ima tacno 2 reda)
                     {
-                        Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, "Invalid data format" + DateTime.Now.ToString("yyyy-MM-dd HH-mm"));
+                        Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, "Invalid data format");
                         errors.Add(a);
                     }
                     else
                     {
                         if (!DateTime.TryParse(rowSplit[0], out DateTime time)) //provera formata datuma
                         {
-                            Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, "Invalid TimeStamp" + DateTime.Now.ToString("yyyy-MM-dd HH-mm"));
+                            Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, "Invalid TimeStamp");
                             errors.Add(a);
                         }
                         else
                         {
                             if (!double.TryParse(rowSplit[1], out double value))
                             {
-                                Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, "Invalid Measured Value for date " + time.ToString("yyyy-MM-dd HH-mm"));
+                                Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, "Invalid Measured Value for date");
                                 errors.Add(a);
                             }
                             else
                             {
                                 if (value < 0.0)
                                 {
-                                    Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, "Invalid Measured Value for date " + time.ToString("yyyy-MM-dd"));
+                                    Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, "Invalid Measured Value for date");
                                     errors.Add(a);
                                 }
 

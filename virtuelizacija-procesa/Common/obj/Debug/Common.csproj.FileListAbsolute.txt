@@ -1,0 +1,6 @@
+C:\Users\ducar\OneDrive\Desktop\project\virtuelizacija-procesa\virtuelizacija-procesa\Common\bin\Debug\Common.dll
+C:\Users\ducar\OneDrive\Desktop\project\virtuelizacija-procesa\virtuelizacija-procesa\Common\bin\Debug\Common.pdb
+C:\Users\ducar\OneDrive\Desktop\project\virtuelizacija-procesa\virtuelizacija-procesa\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\ducar\OneDrive\Desktop\project\virtuelizacija-procesa\virtuelizacija-procesa\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\ducar\OneDrive\Desktop\project\virtuelizacija-procesa\virtuelizacija-procesa\Common\obj\Debug\Common.dll
+C:\Users\ducar\OneDrive\Desktop\project\virtuelizacija-procesa\virtuelizacija-procesa\Common\obj\Debug\Common.pdb
