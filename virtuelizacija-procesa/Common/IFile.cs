@@ -12,5 +12,7 @@ namespace Common
     {
         [OperationContract]
         void ParseFile(FileHandle options, bool isForecast);
+        [OperationContract]
+        void Calc();
     }
 }

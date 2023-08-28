@@ -53,7 +53,7 @@ namespace Database
                 database.Load(options.MemoryStream);
 
                 string date = DateTime.Now.ToString("yyyy-dd-MM");
-                XmlNodeList rows = database.SelectNodes($"//row[TIME_STAMP[contains(., '" + date + "')]]");
+                XmlNodeList rows = database.SelectNodes($"//row[TIME_STAMP]");
 
                 foreach (XmlNode row in rows)
                 {
@@ -214,6 +214,37 @@ namespace Database
                 options.Dispose();
             }
         }
+        public void WriteCalc(List<Load> loads, string path)
+        {
+            using (FileHandle options = OpenFile(path))
+            {
+                XmlDocument database = new XmlDocument();
+                database.Load(options.MemoryStream);
+
+                options.MemoryStream.Position = 0;
+
+                XmlNodeList rows = database.SelectNodes("//row");
+                foreach (Load l in loads)
+                {
+                    XmlNode element = null;
+
+                    try
+                    {
+                        element = database.SelectSingleNode($"//row[TIME_STAMP = '{l.TimeStamp.ToString("yyyy-MM-dd HH:mm")}']");
+                    }
+                    catch { }
+
+                    if (element != null) // upis proracuna u polja ako polja postoje
+                    {
+                        element.SelectSingleNode("ABSOLUTE_PERCENTAGE_DEVIATION").InnerText = l.AbsolutePercentageDeviation.ToString();
+                        element.SelectSingleNode("SQUARED_DEVIATION").InnerText = l.SquaredDeviation.ToString();
+                        database.Save(path);
+                    }
+                }
+                options.Dispose();
+            }
+        }
+
         public void Write(List<Load> loads, List<Audit> audits, string loadsPath, string auditsPath) // upis/kreiranje load i audit tabele
         {
             WriteLoad(loads, loadsPath);

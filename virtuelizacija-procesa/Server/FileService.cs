@@ -14,6 +14,8 @@ namespace Server
     public class FileService : IFile
     {
         public static XmlDb database = new XmlDb();
+        CalculateDelegate calc = new CalculateDelegate();
+        public delegate List<Load> CalculateHandler(object sender, List<Load> args);
 
         [OperationBehavior(AutoDisposeParameters = true)]
         public void ParseFile(FileHandle options, bool isForecast) //parsiranje fajla
@@ -88,8 +90,17 @@ namespace Server
             }
             //poziv metode za upis vrednosti u tabele
             database.Write(values, errors, ConfigurationManager.AppSettings["TBL_LOAD"], ConfigurationManager.AppSettings["TBL_AUDIT"]);
+            Calc(); // pokretanje izracunavanja proracuna
 
-            //TODO
+        }
+
+        public void Calc()
+        {
+            List<Load> loads = new List<Load>();
+            loads = database.Read(ConfigurationManager.AppSettings["TBL_LOAD"]); // citanje load
+            loads = calc.InvokeEvent(loads);
+
+            database.WriteCalc(loads, ConfigurationManager.AppSettings["TBL_LOAD"]); // upis load
         }
     }
 }

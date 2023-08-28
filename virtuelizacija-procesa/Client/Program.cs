@@ -23,7 +23,7 @@ namespace Client
                 //provera foldera
                 if (Directory.Exists(path))
                 {
-                    int temp = 0;
+                    int temp = 1;
 
                     foreach (string filePath in Directory.GetFiles(path, "*.csv"))
                     {
