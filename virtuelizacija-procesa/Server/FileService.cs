@@ -70,12 +70,12 @@ namespace Server
                                 {
                                     if (!isForecast) //provera da li se dodaje measured ili forecast
                                     {
-                                        Load l = new Load(1, time, value, -1);
+                                        Load l = new Load(1, time, -1, value);
                                         values.Add(l);
                                     }
                                     else
                                     {
-                                        Load l = new Load(1, time, -1, value);
+                                        Load l = new Load(1, time, value, -1);
                                         values.Add(l);
                                     }
                                 }
