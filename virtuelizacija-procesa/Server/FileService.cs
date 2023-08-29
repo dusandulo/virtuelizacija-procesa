@@ -14,8 +14,12 @@ namespace Server
     public class FileService : IFile
     {
         public static XmlDb database = new XmlDb();
+        public static InMemDb inMemDatabase = new InMemDb();
         CalculateDelegate calc = new CalculateDelegate();
         public delegate List<Load> CalculateHandler(object sender, List<Load> args);
+
+        public static Dictionary<int, Load> LoadsBase = new Dictionary<int, Load>();
+        public static Dictionary<int, Audit> AuditsBase = new Dictionary<int, Audit>();
 
         [OperationBehavior(AutoDisposeParameters = true)]
         public void ParseFile(FileHandle options, bool isForecast) //parsiranje fajla
@@ -88,10 +92,26 @@ namespace Server
                 }
                 stream.Dispose();
             }
-            //poziv metode za upis vrednosti u tabele
-            database.Write(values, errors, ConfigurationManager.AppSettings["TBL_LOAD"], ConfigurationManager.AppSettings["TBL_AUDIT"]);
-            Calc(); // pokretanje izracunavanja proracuna
-
+            if (ConfigurationManager.AppSettings["DATABASE"].Equals("XML"))
+            {
+                //poziv metode za upis vrednosti u tabele
+                database.Write(values, errors, ConfigurationManager.AppSettings["TBL_LOAD"], ConfigurationManager.AppSettings["TBL_AUDIT"]);
+                //Calc(); // pokretanje izracunavanja proracuna
+            }
+            else if (ConfigurationManager.AppSettings["DATABASE"].Equals("INMEM"))
+            {
+                LoadsBase = inMemDatabase.WriteLoad(values, LoadsBase);
+                foreach (var x in LoadsBase)
+                {
+                    Console.WriteLine(x.Key);
+                    Console.WriteLine(x.Value.ForecastValue);
+                    Console.WriteLine(x.Value.MeasuredValue);
+                }
+            }
+            else
+            {
+                Console.WriteLine("The database type is not set");
+            }
         }
 
         public void Calc()
@@ -102,5 +122,7 @@ namespace Server
 
             database.WriteCalc(loads, ConfigurationManager.AppSettings["TBL_LOAD"]); // upis load
         }
+
+
     }
 }
