@@ -20,6 +20,7 @@ namespace Server
 
         public static Dictionary<int, Load> LoadsBase = new Dictionary<int, Load>();
         public static Dictionary<int, Audit> AuditsBase = new Dictionary<int, Audit>();
+        public static Dictionary<int, ImportedFile> ImportedFilesBase = new Dictionary<int, ImportedFile>();
 
         [OperationBehavior(AutoDisposeParameters = true)]
         public void ParseFile(FileHandle options, bool isForecast) //parsiranje fajla
@@ -92,10 +93,10 @@ namespace Server
                 }
                 stream.Dispose();
             }
+            ImportedFile impo = new ImportedFile(1, options.FileName);
             if (ConfigurationManager.AppSettings["DATABASE"].Equals("XML"))
             {
                 //poziv metode za upis vrednosti u tabele
-                ImportedFile impo = new ImportedFile(1, options.FileName);
                 database.Write(values, errors, impo, ConfigurationManager.AppSettings["TBL_LOAD"],
                     ConfigurationManager.AppSettings["TBL_AUDIT"],
                     ConfigurationManager.AppSettings["TBL_IMPORTED"]);
@@ -105,6 +106,7 @@ namespace Server
             {
                 LoadsBase = inMemDatabase.WriteLoad(values, LoadsBase);
                 AuditsBase = inMemDatabase.WriteAudit(errors, AuditsBase);
+                ImportedFilesBase = inMemDatabase.WriteImportedFile(impo, ImportedFilesBase);
                 /*foreach (var x in LoadsBase)
                 {
                     Console.WriteLine(x.Key);
@@ -117,6 +119,10 @@ namespace Server
                 {
                     Console.WriteLine(x.Value.Message);
                 }*/
+                foreach(var x in ImportedFilesBase)
+                {
+                    Console.WriteLine(x.Value.FileName);
+                }
             }
             else
             {

@@ -58,5 +58,13 @@ namespace Database
 
             return dicts;
         }
+        public Dictionary<int, ImportedFile> WriteImportedFile(ImportedFile importedFile, Dictionary<int, ImportedFile> dicts)
+        {
+            int maxId = dicts.Count;
+            importedFile.Id = ++maxId;
+            dicts.Add(importedFile.Id, importedFile);
+            return dicts;
+        }
     }
+
 }
