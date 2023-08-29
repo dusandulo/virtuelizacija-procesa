@@ -100,13 +100,15 @@ namespace Server
                 database.Write(values, errors, impo, ConfigurationManager.AppSettings["TBL_LOAD"],
                     ConfigurationManager.AppSettings["TBL_AUDIT"],
                     ConfigurationManager.AppSettings["TBL_IMPORTED"]);
-                //Calc(); // pokretanje izracunavanja proracuna
+                Calc(); // pokretanje izracunavanja proracuna
             }
             else if (ConfigurationManager.AppSettings["DATABASE"].Equals("INMEM"))
             {
                 LoadsBase = inMemDatabase.WriteLoad(values, LoadsBase);
                 AuditsBase = inMemDatabase.WriteAudit(errors, AuditsBase);
                 ImportedFilesBase = inMemDatabase.WriteImportedFile(impo, ImportedFilesBase);
+
+                CalcInMemory();
                 /*foreach (var x in LoadsBase)
                 {
                     Console.WriteLine(x.Key);
@@ -119,9 +121,17 @@ namespace Server
                 {
                     Console.WriteLine(x.Value.Message);
                 }*/
-                foreach(var x in ImportedFilesBase)
+                /*foreach(var x in ImportedFilesBase)
                 {
                     Console.WriteLine(x.Value.FileName);
+                }*/
+                foreach (var x in LoadsBase)
+                {
+                    Console.WriteLine(x.Key);
+                    Console.WriteLine(x.Value.ForecastValue);
+                    Console.WriteLine(x.Value.MeasuredValue);
+                    Console.WriteLine(x.Value.AbsolutePercentageDeviation);
+                    Console.WriteLine(x.Value.SquaredDeviation);
                 }
             }
             else
@@ -137,6 +147,14 @@ namespace Server
             loads = calc.InvokeEvent(loads);
 
             database.WriteCalc(loads, ConfigurationManager.AppSettings["TBL_LOAD"]); // upis load
+        }
+        public void CalcInMemory()
+        {
+            List<Load> loads = new List<Load>();
+            loads = inMemDatabase.Read(LoadsBase);
+            loads = calc.InvokeEvent(loads);
+
+            LoadsBase = inMemDatabase.WriteCalc(loads, LoadsBase);
         }
 
 

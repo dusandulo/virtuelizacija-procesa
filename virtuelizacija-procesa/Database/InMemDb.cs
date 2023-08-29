@@ -65,6 +65,26 @@ namespace Database
             dicts.Add(importedFile.Id, importedFile);
             return dicts;
         }
+        public List<Load> Read(Dictionary<int, Load> dicts)
+        {
+            return dicts.Values.ToList();
+        }
+        public Dictionary<int, Load> WriteCalc(List<Load> loads, Dictionary<int, Load> dicts)
+        {
+            foreach (var x in loads)
+            {
+                foreach (var y in dicts)
+                {
+                    if (y.Value.TimeStamp == x.TimeStamp)
+                    {
+                        y.Value.AbsolutePercentageDeviation = x.AbsolutePercentageDeviation;
+                        y.Value.SquaredDeviation = x.SquaredDeviation;
+                    }
+                }
+            }
+
+            return dicts;
+        }
     }
 
 }

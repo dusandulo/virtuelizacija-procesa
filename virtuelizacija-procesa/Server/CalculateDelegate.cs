@@ -16,8 +16,8 @@ namespace Server
 
         public CalculateDelegate()
         {
-            absEvent += CalculateSquareEvent;
-            powEvent += CalculateAbsEvent;
+            absEvent += CalculateAbsEvent;
+            powEvent += CalculateSquareEvent;
         }
 
         private List<Load> CalculateSquareEvent(object sender, List<Load> loads) // racunanje apsolutnog procentualnog odstupanja
