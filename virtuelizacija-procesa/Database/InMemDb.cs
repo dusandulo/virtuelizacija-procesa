@@ -42,5 +42,21 @@ namespace Database
 
             return dicts;
         }
+        public Dictionary<int, Audit> WriteAudit(List<Audit> audits, Dictionary<int, Audit> dicts)
+        {
+            int maxId = dicts.Count;
+            foreach (var x in audits)
+            {
+                x.Id = ++maxId;
+                dicts.Add(x.Id, x);
+            }
+            if(audits.Count == 0)
+            {
+                Audit y = new Audit(++maxId, DateTime.Now, MessageType.INFO, "Data successfully added to database");
+                dicts.Add(y.Id, y);
+            }
+
+            return dicts;
+        }
     }
 }

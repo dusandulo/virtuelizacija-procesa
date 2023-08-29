@@ -65,7 +65,7 @@ namespace Client
 
             memoryStream.Position = 0;
 
-            using (FileHandle options = new FileHandle(memoryStream, "data"))
+            using (FileHandle options = new FileHandle(memoryStream, Path.GetFileName(path)))
             {
                 proxy.ParseFile(options, isForecast);
                 options.Dispose();

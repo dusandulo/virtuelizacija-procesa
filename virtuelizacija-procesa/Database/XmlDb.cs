@@ -105,7 +105,7 @@ namespace Database
                     database.Save(path);
                 }
 
-                if (audits.Count == 0) //kreiranje nove tabele
+                if (audits.Count == 0) //kreiranje za uspesno dodavanje
                 {
                     XmlElement newRow = database.CreateElement("STAVKA");
 
@@ -214,6 +214,36 @@ namespace Database
                 options.Dispose();
             }
         }
+        private void WriteImportedFile(ImportedFile impo, string path) //upis importedFile tabele
+        {
+            using (FileHandle options = OpenFile(path))
+            {
+                XmlDocument database = new XmlDocument();
+                database.Load(options.MemoryStream);
+
+                XmlNodeList rows = database.SelectNodes("//row");
+                int maxID = rows.Count;
+
+                impo.Id = ++maxID;
+
+                XmlElement newRow = database.CreateElement("row");
+
+                XmlElement idElement = database.CreateElement("ID");
+                idElement.InnerText = impo.Id.ToString();
+
+                XmlElement fileNameElement = database.CreateElement("FILE_NAME");
+                fileNameElement.InnerText = impo.FileName.ToString();
+
+                newRow.AppendChild(idElement);
+                newRow.AppendChild(fileNameElement);
+
+                XmlElement rootElement = database.DocumentElement;
+                rootElement.AppendChild(newRow);
+                database.Save(path);
+
+                options.Dispose();
+            }
+        }
         public void WriteCalc(List<Load> loads, string path)
         {
             using (FileHandle options = OpenFile(path))
@@ -245,10 +275,11 @@ namespace Database
             }
         }
 
-        public void Write(List<Load> loads, List<Audit> audits, string loadsPath, string auditsPath) // upis/kreiranje load i audit tabele
+        public void Write(List<Load> loads, List<Audit> audits, ImportedFile impo, string loadsPath, string auditsPath, string importedFilesPath) // upis/kreiranje load i audit tabele
         {
             WriteLoad(loads, loadsPath);
             WriteAudit(audits, auditsPath);
+            WriteImportedFile(impo, importedFilesPath);
         }
 
     }

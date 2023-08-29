@@ -95,18 +95,28 @@ namespace Server
             if (ConfigurationManager.AppSettings["DATABASE"].Equals("XML"))
             {
                 //poziv metode za upis vrednosti u tabele
-                database.Write(values, errors, ConfigurationManager.AppSettings["TBL_LOAD"], ConfigurationManager.AppSettings["TBL_AUDIT"]);
+                ImportedFile impo = new ImportedFile(1, options.FileName);
+                database.Write(values, errors, impo, ConfigurationManager.AppSettings["TBL_LOAD"],
+                    ConfigurationManager.AppSettings["TBL_AUDIT"],
+                    ConfigurationManager.AppSettings["TBL_IMPORTED"]);
                 //Calc(); // pokretanje izracunavanja proracuna
             }
             else if (ConfigurationManager.AppSettings["DATABASE"].Equals("INMEM"))
             {
                 LoadsBase = inMemDatabase.WriteLoad(values, LoadsBase);
-                foreach (var x in LoadsBase)
+                AuditsBase = inMemDatabase.WriteAudit(errors, AuditsBase);
+                /*foreach (var x in LoadsBase)
                 {
                     Console.WriteLine(x.Key);
                     Console.WriteLine(x.Value.ForecastValue);
                     Console.WriteLine(x.Value.MeasuredValue);
-                }
+                    Console.WriteLine(x.Value.TimeStamp);
+                }*/
+
+                /*foreach(var x in AuditsBase)
+                {
+                    Console.WriteLine(x.Value.Message);
+                }*/
             }
             else
             {
