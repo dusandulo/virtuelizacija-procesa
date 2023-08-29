@@ -67,7 +67,7 @@ namespace Database
             }
             return loads;
         }
-        private void WriteAudit(List<Audit> audits, string path) //upis audit tabele
+        private void WriteAudit(List<Audit> audits, string path, string filename) //upis audit tabele
         {
             using (FileHandle options = OpenFile(path))
             {
@@ -119,7 +119,7 @@ namespace Database
                     messageTypeElement.InnerText = "INFO";
 
                     XmlElement messageElement = database.CreateElement("MESSAGE");
-                    messageElement.InnerText = "Data successfully added to database";
+                    messageElement.InnerText = $"Data from "+ filename +" successfully added to database";
 
                     newRow.AppendChild(idElement);
                     newRow.AppendChild(timeStampElement);
@@ -224,7 +224,7 @@ namespace Database
                 XmlNodeList rows = database.SelectNodes("//row");
                 int maxID = rows.Count;
 
-                impo.Id = ++maxID;
+                impo.Id = ++maxID + 100;
 
                 XmlElement newRow = database.CreateElement("row");
 
@@ -278,7 +278,7 @@ namespace Database
         public void Write(List<Load> loads, List<Audit> audits, ImportedFile impo, string loadsPath, string auditsPath, string importedFilesPath) // upis/kreiranje load i audit tabele
         {
             WriteLoad(loads, loadsPath);
-            WriteAudit(audits, auditsPath);
+            WriteAudit(audits, auditsPath, impo.FileName);
             WriteImportedFile(impo, importedFilesPath);
         }
 

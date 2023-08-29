@@ -42,7 +42,7 @@ namespace Database
 
             return dicts;
         }
-        public Dictionary<int, Audit> WriteAudit(List<Audit> audits, Dictionary<int, Audit> dicts)
+        public Dictionary<int, Audit> WriteAudit(List<Audit> audits, Dictionary<int, Audit> dicts, string path)
         {
             int maxId = dicts.Count;
             foreach (var x in audits)
@@ -52,7 +52,7 @@ namespace Database
             }
             if(audits.Count == 0)
             {
-                Audit y = new Audit(++maxId, DateTime.Now, MessageType.INFO, "Data successfully added to database");
+                Audit y = new Audit(++maxId, DateTime.Now, MessageType.INFO, $"Data from "+ path +" successfully added to database");
                 dicts.Add(y.Id, y);
             }
 

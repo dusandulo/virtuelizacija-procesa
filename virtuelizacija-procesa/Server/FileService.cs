@@ -43,33 +43,33 @@ namespace Server
 
                     if (csv_rows.Length > 26 || csv_rows.Length < 23) //provera broja redova u datoteci (broj sati u danu)
                     {
-                        Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, "Invalid number of rows");
+                        Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, $"Invalid number of rows in " + options.FileName);
                         errors.Add(a);
                     }
                     else if (rowSplit.Length != 2) //provera formata (da li ima tacno 2 reda)
                     {
-                        Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, "Invalid data format");
+                        Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, $"Invalid data format in " + options.FileName);
                         errors.Add(a);
                     }
                     else
                     {
                         if (!DateTime.TryParse(rowSplit[0], out DateTime time)) //provera formata datuma
                         {
-                            Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, "Invalid TimeStamp");
+                            Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, $"Invalid TimeStamp in " + options.FileName);
                             errors.Add(a);
                         }
                         else
                         {
                             if (!double.TryParse(rowSplit[1], out double value))
                             {
-                                Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, "Invalid Measured Value for date");
+                                Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, $"Invalid Measured Value for date in " + options.FileName);
                                 errors.Add(a);
                             }
                             else
                             {
                                 if (value < 0.0)
                                 {
-                                    Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, "Invalid Measured Value for date");
+                                    Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, $"Invalid Measured Value for date " + options.FileName);
                                     errors.Add(a);
                                 }
 
@@ -100,12 +100,12 @@ namespace Server
                 database.Write(values, errors, impo, ConfigurationManager.AppSettings["TBL_LOAD"],
                     ConfigurationManager.AppSettings["TBL_AUDIT"],
                     ConfigurationManager.AppSettings["TBL_IMPORTED"]);
-                Calc(); // pokretanje izracunavanja proracuna
+                //Calc(); // pokretanje izracunavanja proracuna
             }
             else if (ConfigurationManager.AppSettings["DATABASE"].Equals("INMEM"))
             {
                 LoadsBase = inMemDatabase.WriteLoad(values, LoadsBase);
-                AuditsBase = inMemDatabase.WriteAudit(errors, AuditsBase);
+                AuditsBase = inMemDatabase.WriteAudit(errors, AuditsBase, options.FileName);
                 ImportedFilesBase = inMemDatabase.WriteImportedFile(impo, ImportedFilesBase);
 
                 CalcInMemory();
@@ -117,22 +117,22 @@ namespace Server
                     Console.WriteLine(x.Value.TimeStamp);
                 }*/
 
-                /*foreach(var x in AuditsBase)
+                foreach(var x in AuditsBase)
                 {
                     Console.WriteLine(x.Value.Message);
-                }*/
-                /*foreach(var x in ImportedFilesBase)
+                }
+                foreach(var x in ImportedFilesBase)
                 {
                     Console.WriteLine(x.Value.FileName);
-                }*/
-                foreach (var x in LoadsBase)
+                }
+                /*foreach (var x in LoadsBase)
                 {
                     Console.WriteLine(x.Key);
                     Console.WriteLine(x.Value.ForecastValue);
                     Console.WriteLine(x.Value.MeasuredValue);
                     Console.WriteLine(x.Value.AbsolutePercentageDeviation);
                     Console.WriteLine(x.Value.SquaredDeviation);
-                }
+                }*/
             }
             else
             {
