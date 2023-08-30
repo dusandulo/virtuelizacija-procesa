@@ -11,8 +11,10 @@ namespace Common
     public interface IFile
     {
         [OperationContract]
-        void ParseFile(FileHandle options, bool isForecast);
+        void ParseFile(FileHandle options, bool forecastBool);
         [OperationContract]
         void Calc();
+        [OperationContract]
+        void CalcInMemory();
     }
 }

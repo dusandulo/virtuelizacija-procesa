@@ -13,7 +13,6 @@ namespace Database
     public class XmlDb
     {
         private static int ID = 1; //id counter
-        private static int file_id = 101;
 
         public FileHandle OpenFile(string path) //otvaranje fajla
         {
@@ -304,7 +303,6 @@ namespace Database
                 options.Dispose();
             }
         }
-
         public void Write(List<Load> loads, List<Audit> audits, ImportedFile impo, string loadsPath, string auditsPath, string importedFilesPath) // upis/kreiranje load i audit tabele
         {
             WriteLoad(loads, loadsPath);

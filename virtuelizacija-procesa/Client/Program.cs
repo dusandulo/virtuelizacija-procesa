@@ -50,7 +50,7 @@ namespace Client
             }
         }
 
-        private static void SendFile(string path, bool isForecast)
+        private static void SendFile(string path, bool forecastBool)
         {
             MemoryStream memoryStream = new MemoryStream();
 
@@ -67,7 +67,7 @@ namespace Client
 
             using (FileHandle options = new FileHandle(memoryStream, Path.GetFileName(path)))
             {
-                proxy.ParseFile(options, isForecast);
+                proxy.ParseFile(options, forecastBool);
                 options.Dispose();
             }
         }
