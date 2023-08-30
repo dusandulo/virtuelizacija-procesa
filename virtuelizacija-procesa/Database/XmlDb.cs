@@ -13,6 +13,7 @@ namespace Database
     public class XmlDb
     {
         private static int ID = 1; //id counter
+        private static int file_id = 101;
 
         public FileHandle OpenFile(string path) //otvaranje fajla
         {
@@ -161,19 +162,25 @@ namespace Database
 
                     if (element != null) //ako element postoji proverava se da li je measured ili forecast value
                     {
+                        l.ImportedFileId = file_id;
+
                         if (l.ForecastValue == -1)
                         {
                             element.SelectSingleNode("MEASURED_VALUE").InnerText = l.MeasuredValue.ToString();
+                            element.SelectSingleNode("IMPORTED_FILE_ID").InnerText = l.ImportedFileId.ToString();
                             database.Save(path);
                         }
                         else
                         {
                             element.SelectSingleNode("FORECAST_VALUE").InnerText = l.ForecastValue.ToString();
+                            element.SelectSingleNode("IMPORTED_FILE_ID").InnerText = l.ImportedFileId.ToString();
                             database.Save(path);
                         }
                     }
                     else //upis
                     {
+                        l.ImportedFileId = file_id;
+
                         XmlElement newRow = database.CreateElement("row");
 
                         XmlElement idElement = database.CreateElement("ID");
@@ -210,6 +217,7 @@ namespace Database
                         database.Save(path);
                     }
                 }
+                file_id++;
 
                 options.Dispose();
             }

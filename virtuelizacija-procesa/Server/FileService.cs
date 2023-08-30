@@ -22,6 +22,7 @@ namespace Server
         public static Dictionary<int, Audit> AuditsBase = new Dictionary<int, Audit>();
         public static Dictionary<int, ImportedFile> ImportedFilesBase = new Dictionary<int, ImportedFile>();
 
+
         [OperationBehavior(AutoDisposeParameters = true)]
         public void ParseFile(FileHandle options, bool isForecast) //parsiranje fajla
         {
