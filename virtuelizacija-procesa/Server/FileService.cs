@@ -101,7 +101,7 @@ namespace Server
                 database.Write(values, errors, impo, ConfigurationManager.AppSettings["TBL_LOAD"],
                                                      ConfigurationManager.AppSettings["TBL_AUDIT"],
                                                      ConfigurationManager.AppSettings["TBL_IMPORTED"]);
-                //Calc(); // pokretanje izracunavanja proracuna
+                Calc(); // pokretanje izracunavanja proracuna
             }
             else if (ConfigurationManager.AppSettings["DATABASE"].Equals("INMEM"))
             {
@@ -110,22 +110,32 @@ namespace Server
                 ImportedFilesBase = inMemDatabase.WriteImportedFile(impo, ImportedFilesBase);
 
                 CalcInMemory();
+
+                //test za inMemory bazu
+
                 /*foreach (var x in LoadsBase)
                 {
+                    Console.WriteLine("//////////////////////////////////////");
                     Console.WriteLine(x.Key);
                     Console.WriteLine(x.Value.ForecastValue);
                     Console.WriteLine(x.Value.MeasuredValue);
+                    Console.WriteLine(x.Value.AbsolutePercentageDeviation);
+                    Console.WriteLine(x.Value.SquaredDeviation);
                     Console.WriteLine(x.Value.TimeStamp);
+                    Console.WriteLine(x.Value.ImportedFileId);
+                    Console.WriteLine("//////////////////////////////////////");
                 }*/
 
-                foreach(var x in AuditsBase)
+                /*foreach(var x in AuditsBase)
                 {
                     Console.WriteLine(x.Value.Message);
-                }
-                foreach(var x in ImportedFilesBase)
+                }*/
+
+                /*foreach (var x in ImportedFilesBase)
                 {
                     Console.WriteLine(x.Value.FileName);
-                }
+                }/*
+
                 /*foreach (var x in LoadsBase)
                 {
                     Console.WriteLine(x.Key);

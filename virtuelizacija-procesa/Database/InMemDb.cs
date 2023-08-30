@@ -14,6 +14,24 @@ namespace Database
         public Dictionary<int, Load> WriteLoad(List<Load> loads, Dictionary<int, Load> dicts)
         {
             int maxId = dicts.Count;
+            int fileId;
+            if(dicts.Count == 0)
+            {
+                fileId = 101;
+            }
+            else
+            {
+                int maxImportedFileId = int.MinValue;
+                foreach (var x in dicts)
+                {
+                    if(x.Value.ImportedFileId > maxImportedFileId)
+                    {
+                        maxImportedFileId = x.Value.ImportedFileId;
+                    }
+                }
+                fileId = ++maxImportedFileId;
+            }
+
             bool found = false;
             foreach (var x in loads)
             {
@@ -24,10 +42,12 @@ namespace Database
                         if(x.ForecastValue == -1)
                         {
                             y.Value.MeasuredValue = x.MeasuredValue;
+                            y.Value.ImportedFileId = fileId;
                         }
                         else
                         {
                             y.Value.ForecastValue = x.ForecastValue;
+                            y.Value.ImportedFileId = fileId;
                         }
                         found = true;
                     }
@@ -35,6 +55,7 @@ namespace Database
                 if (!found)
                 {
                     x.Id = ++maxId;
+                    x.ImportedFileId = fileId;
                     dicts.Add(x.Id, x);
                     found = false;
                 }
