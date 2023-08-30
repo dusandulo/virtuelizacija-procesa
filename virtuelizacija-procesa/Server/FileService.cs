@@ -99,8 +99,8 @@ namespace Server
             {
                 //poziv metode za upis vrednosti u tabele
                 database.Write(values, errors, impo, ConfigurationManager.AppSettings["TBL_LOAD"],
-                    ConfigurationManager.AppSettings["TBL_AUDIT"],
-                    ConfigurationManager.AppSettings["TBL_IMPORTED"]);
+                                                     ConfigurationManager.AppSettings["TBL_AUDIT"],
+                                                     ConfigurationManager.AppSettings["TBL_IMPORTED"]);
                 //Calc(); // pokretanje izracunavanja proracuna
             }
             else if (ConfigurationManager.AppSettings["DATABASE"].Equals("INMEM"))

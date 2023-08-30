@@ -139,6 +139,8 @@ namespace Database
         {
             using (FileHandle options = OpenFile(path))
             {
+                int idFile;
+
                 XmlDocument database = new XmlDocument();
                 database.Load(options.MemoryStream);
 
@@ -146,6 +148,27 @@ namespace Database
 
                 XmlNodeList rows = database.SelectNodes("//row");
                 int maxID = rows.Count;
+
+                if (rows.Count == 0)
+                {
+                    idFile = 101;
+                }
+                else
+                {
+                    int maxImportedFileId = int.MinValue;
+
+                    foreach (XmlNode x in rows)
+                    {
+                        int importedFileId = int.Parse(x.SelectSingleNode("IMPORTED_FILE_ID").InnerText);
+
+                        if (importedFileId > maxImportedFileId)
+                        {
+                            maxImportedFileId = importedFileId;
+                        }
+                    }
+
+                    idFile = ++maxImportedFileId;
+                }
 
                 foreach (Load l in loads)
                 {
@@ -162,7 +185,7 @@ namespace Database
 
                     if (element != null) //ako element postoji proverava se da li je measured ili forecast value
                     {
-                        l.ImportedFileId = file_id;
+                        l.ImportedFileId = idFile;
 
                         if (l.ForecastValue == -1)
                         {
@@ -179,7 +202,7 @@ namespace Database
                     }
                     else //upis
                     {
-                        l.ImportedFileId = file_id;
+                        l.ImportedFileId = idFile;
 
                         XmlElement newRow = database.CreateElement("row");
 
@@ -217,7 +240,6 @@ namespace Database
                         database.Save(path);
                     }
                 }
-                file_id++;
 
                 options.Dispose();
             }
