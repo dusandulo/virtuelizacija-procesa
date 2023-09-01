@@ -1,5 +1,5 @@
 # Evidencija prognozirane i ostvarene potrošnje električne energije
-* Predmetni projekat iz predmeta Birtuelizacija procesa
+* Predmetni projekat iz predmeta Virtuelizacija procesa
 ## Opis projekta
 Projekat predstavlja aplikaciju koja treba da se bavi evidencijom prognozirane i ostvarene potrošnje električne energije dobijene od klijenta kog predstavlja kompanija za prenos električne energije.
 
