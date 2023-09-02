@@ -46,11 +46,14 @@ namespace Server
                     {
                         Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, $"Invalid number of rows in " + options.FileName);
                         errors.Add(a);
+                        // ako postoji greska sa fajlom, taj fajl se ne upisuje u bazu podataka
+                        //break; 
                     }
                     else if (rowSplit.Length != 2) //provera formata (da li ima tacno 2 reda)
                     {
                         Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, $"Invalid data format in " + options.FileName);
                         errors.Add(a);
+                        //break;
                     }
                     else
                     {
@@ -58,6 +61,7 @@ namespace Server
                         {
                             Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, $"Invalid TimeStamp in " + options.FileName);
                             errors.Add(a);
+                            //break;
                         }
                         else
                         {
@@ -65,6 +69,7 @@ namespace Server
                             {
                                 Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, $"Invalid Measured Value for date in " + options.FileName);
                                 errors.Add(a);
+                                //break;
                             }
                             else
                             {
@@ -72,6 +77,7 @@ namespace Server
                                 {
                                     Audit a = new Audit(0, DateTime.Now, MessageType.ERROR, $"Invalid Measured Value for date " + options.FileName);
                                     errors.Add(a);
+                                    //break;
                                 }
 
                                 else

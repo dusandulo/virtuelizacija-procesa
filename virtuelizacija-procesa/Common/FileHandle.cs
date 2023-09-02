@@ -28,7 +28,7 @@ namespace Common
             {
                 if (disposing)
                 {
-
+                    MemoryStream.Dispose(); // oslobadjanje MemoryStream-a
                 }
                 disposedValue = true;
             }
