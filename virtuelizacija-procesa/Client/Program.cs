@@ -13,10 +13,10 @@ namespace Client
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Client started....\n\n");
+            //Console.WriteLine("Client started....\n\n");
             while (true)
             {
-                Console.WriteLine("===================================================");
+                Console.WriteLine("==================================================================");
                 Console.WriteLine("Enter the path of the folder from which you want to read the data: ");
                 string path = Console.ReadLine();
 
@@ -29,13 +29,17 @@ namespace Client
                     {
                         if (path.Contains("forecast")) //provera da li se salje forecast ili measured
                         {
+                            Console.WriteLine(temp + " --->  Processing...");
                             SendFile(filePath, true);
-                            Console.WriteLine(temp + ". - Successfully!");
+                            Console.WriteLine(temp + " --->  Successfully");
+                            Console.WriteLine("-----------------------------");
                         }
                         else if (path.Contains("measured"))
                         {
+                            Console.WriteLine(temp + " --->  Processing...");
                             SendFile(filePath, false);
-                            Console.WriteLine(temp + ". - Successfully!");
+                            Console.WriteLine(temp + " ---> Successfully");
+                            Console.WriteLine("-----------------------------");
                         }
                         temp++;
 

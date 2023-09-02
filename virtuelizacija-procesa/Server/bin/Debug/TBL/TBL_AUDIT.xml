@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<STAVKE>
+  <STAVKA>
+    <ID>1</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_17.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>2</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_18.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>3</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_19.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>4</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_20.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>5</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_21.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>6</ID>
+    <TIME_STAMP>2023-08-30 18:51:15.746</TIME_STAMP>
+    <MESSAGE_TYPE>INFO</MESSAGE_TYPE>
+    <MESSAGE>Data from measured_2023_01_22.csv successfully added to database</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>7</ID>
+    <TIME_STAMP>2023-08-30 18:51:15.847</TIME_STAMP>
+    <MESSAGE_TYPE>INFO</MESSAGE_TYPE>
+    <MESSAGE>Data from measured_2023_01_23.csv successfully added to database</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>8</ID>
+    <TIME_STAMP>2023-08-30 18:51:15.974</TIME_STAMP>
+    <MESSAGE_TYPE>INFO</MESSAGE_TYPE>
+    <MESSAGE>Data from measured_2023_01_24.csv successfully added to database</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>9</ID>
+    <TIME_STAMP>2023-08-30 18:51:16.128</TIME_STAMP>
+    <MESSAGE_TYPE>INFO</MESSAGE_TYPE>
+    <MESSAGE>Data from measured_2023_01_25.csv successfully added to database</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>10</ID>
+    <TIME_STAMP>2023-08-30 18:51:16.318</TIME_STAMP>
+    <MESSAGE_TYPE>INFO</MESSAGE_TYPE>
+    <MESSAGE>Data from measured_2023_01_26.csv successfully added to database</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>11</ID>
+    <TIME_STAMP>2023-08-30 18:51:16.541</TIME_STAMP>
+    <MESSAGE_TYPE>INFO</MESSAGE_TYPE>
+    <MESSAGE>Data from measured_2023_01_27.csv successfully added to database</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>12</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_28.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>13</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_29.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>14</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_30.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>15</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_31.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>16</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_02_01.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>17</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_02_02.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>18</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_02_03.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>19</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_02_04.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>20</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_02_05.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>21</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_02_06.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>22</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_02_07.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>23</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_01_17.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>24</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_01_18.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>25</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_01_19.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>26</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_01_20.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>27</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_01_21.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>28</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_01_22.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>29</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_01_23.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>30</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_01_24.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>31</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_01_25.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>32</ID>
+    <TIME_STAMP>2023-08-30 18:51:51.602</TIME_STAMP>
+    <MESSAGE_TYPE>INFO</MESSAGE_TYPE>
+    <MESSAGE>Data from forecast_2023_01_26.csv successfully added to database</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>33</ID>
+    <TIME_STAMP>2023-08-30 18:51:52.429</TIME_STAMP>
+    <MESSAGE_TYPE>INFO</MESSAGE_TYPE>
+    <MESSAGE>Data from forecast_2023_01_27.csv successfully added to database</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>34</ID>
+    <TIME_STAMP>2023-08-30 18:51:53.323</TIME_STAMP>
+    <MESSAGE_TYPE>INFO</MESSAGE_TYPE>
+    <MESSAGE>Data from forecast_2023_01_28.csv successfully added to database</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>35</ID>
+    <TIME_STAMP>2023-08-30 18:51:54.178</TIME_STAMP>
+    <MESSAGE_TYPE>INFO</MESSAGE_TYPE>
+    <MESSAGE>Data from forecast_2023_01_29.csv successfully added to database</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>36</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_01_30.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>37</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_01_31.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>38</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_02_01.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>39</ID>
+    <TIME_STAMP>2023-08-30 18:51</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_02_02.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>40</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_02_03.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>41</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_02_04.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>42</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_02_05.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>43</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_02_06.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>44</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in forecast_2023_02_07.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>45</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_17.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>46</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_18.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>47</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_19.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>48</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_20.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>49</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_21.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>50</ID>
+    <TIME_STAMP>2023-08-30 18:52:20.124</TIME_STAMP>
+    <MESSAGE_TYPE>INFO</MESSAGE_TYPE>
+    <MESSAGE>Data from measured_2023_01_22.csv successfully added to database</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>51</ID>
+    <TIME_STAMP>2023-08-30 18:52:22.684</TIME_STAMP>
+    <MESSAGE_TYPE>INFO</MESSAGE_TYPE>
+    <MESSAGE>Data from measured_2023_01_23.csv successfully added to database</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>52</ID>
+    <TIME_STAMP>2023-08-30 18:52:23.485</TIME_STAMP>
+    <MESSAGE_TYPE>INFO</MESSAGE_TYPE>
+    <MESSAGE>Data from measured_2023_01_24.csv successfully added to database</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>53</ID>
+    <TIME_STAMP>2023-08-30 18:52:24.382</TIME_STAMP>
+    <MESSAGE_TYPE>INFO</MESSAGE_TYPE>
+    <MESSAGE>Data from measured_2023_01_25.csv successfully added to database</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>54</ID>
+    <TIME_STAMP>2023-08-30 18:52:25.191</TIME_STAMP>
+    <MESSAGE_TYPE>INFO</MESSAGE_TYPE>
+    <MESSAGE>Data from measured_2023_01_26.csv successfully added to database</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>55</ID>
+    <TIME_STAMP>2023-08-30 18:52:25.981</TIME_STAMP>
+    <MESSAGE_TYPE>INFO</MESSAGE_TYPE>
+    <MESSAGE>Data from measured_2023_01_27.csv successfully added to database</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>56</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_28.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>57</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_29.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>58</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_30.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>59</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_01_31.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>60</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_02_01.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>61</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_02_02.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>62</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_02_03.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>63</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_02_04.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>64</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_02_05.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>65</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_02_06.csv</MESSAGE>
+  </STAVKA>
+  <STAVKA>
+    <ID>66</ID>
+    <TIME_STAMP>2023-08-30 18:52</TIME_STAMP>
+    <MESSAGE_TYPE>ERROR</MESSAGE_TYPE>
+    <MESSAGE>Invalid TimeStamp in measured_2023_02_07.csv</MESSAGE>
+  </STAVKA>
+</STAVKE>
